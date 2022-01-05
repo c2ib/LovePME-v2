@@ -1,0 +1,72 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Register
+{% endblock %}
+
+{% block body %}
+
+<!--  Inscription investisseurs -->
+<section id="inscription" class="bg-light">
+
+	<div class="container">
+		<div class="row mb-5">
+			<div class="col-md-8 mx-auto text-center">
+				<h5 class="mb-3">Inscription investisseurs</h5>
+				<h1 class="text-uppercase text-center">Inscription investisseurs</h1>
+				<h6 class="text-muted text-center mt-3 ">&#42;
+					Cette inscription est obligatoire conformément à la législation du crowdfunding (gratuite et sans
+					engagement)
+					Vos données sont protégées et sécurisées.
+					Veuillez noter que tous les champs sont obligatoires et qu'une demande incomplète pourrait être
+					rejetée</h6>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-8 mx-auto">
+				
+				<!-- Registration Form -->
+				<div class="registrationForm">
+					<h4 class="text-center">Données personnelles</h4>
+					{{ form_start(registrationForm) }}
+				
+					{{ form_row(registrationForm.last_name, {'label': 'Nom', 'attr': {'placeholder': 'Nom d\'utilisateur' }}) }}
+					{{ form_row(registrationForm.first_name, {'label': 'Prenom', 'attr': {'placeholder': 'Prenom d\'utilisateur' }})
+					}}
+					{{ form_row(registrationForm.date_of_birth, {'label': 'Date de naissance', 'attr':  {'placeholder': 'Date de naissance' }})
+					}}
+					{{ form_row(registrationForm.email, {'label': 'E-mail', 'attr':  {'placeholder': 'Adresse e-mail' }}) }}
+				
+				
+				
+					<div style="display: none">
+						{{ form_row(registrationForm.roles) }}
+					</div>
+				
+					{{ form_row(registrationForm.plainPassword, {'label': 'Mot de passe', 'attr': {'placeholder': 'Mot de passe' }})
+				
+					}}
+				
+				
+					{{ form_row(registrationForm.agreeTerms1, {'label':"Avez-vous conscience que vous pouvez perdre éventuellement la totalité de votre investissement ?" })}}
+					{{ form_row(registrationForm.agreeTerms2, {'label':"Avez-vous conscience que vous aurez des difficultés à revendre vos titres malgré l'existence d'une Fiche d’informations clés sur l’investissement
+				et banque d'informations
+				 ?" })}}
+					{{ form_row(registrationForm.agreeTerms3, {'label':" J’ai pris connaissance des CGU" })}}
+					<button type="submit" id="form-submit" class="btn registrationForm"></button>
+				
+				
+					{{ form_end(registrationForm) }}
+				</div>
+
+				
+
+			</div>
+		</div>
+
+	</div>
+
+</section>
+<!--  //Inscription investisseurs -->
+{{ include('footer.html.twig')}}
+
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends 'baseUsers.html.twig' %}
+
+{% block title %}Modification du profil
+{% endblock %}
+
+{% block body %}
+{{ parent() }}
+
+<div class="col-10 p-5 shadow">
+    <h2 class="py-5">Modification du profil de
+        
+        {{app.user.lastName}}
+        {{app.user.firstName}}
+    </h2>
+    
+    {{ form(form) }}
+  
+</div>
+
+{% endblock %}

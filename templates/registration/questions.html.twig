@@ -1,0 +1,146 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Questionnaire
+{% endblock %}
+
+{% block body %}
+<section id="questionnaire" class="bg-light">
+
+	<div class="container">
+		<div class="row mb-5">
+			<div class="col-md-8 mx-auto text-center">
+				<h5 class="mb-3">Inscription investisseurs</h5>
+				<h1 class="text-uppercase text-center">Questionnaire investisseur</h1>
+				<h6 class="text-muted text-center mt-3 ">&#42;
+					La Directive européenne sur les marchés d'instruments financiers
+					(Directive MIF) renforce les obligations de conseil des intermédiaires financiers à votre égard.
+					Pour vous accompagner dans
+					vos décisions, votre banquier ou votre conseiller de gestion vous
+					demande un certain nombre de renseignements plus ou moins
+					détaillés selon le type de service qu'il va vous rendre. Ces questions permettent de cerner votre
+					demande et votre projet. C'est
+					votre intérêt d'y répondre. C'est pourquoi nous vous proposons
+					de vous préparer à ce dialogue en utilisant notre questionnaire
+					d'investissement financier.</h6>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-8 mx-auto">
+				<!-- Modal -->
+				{{ include('registration/modal.html.twig')}}
+				<!-- /Modal -->
+
+				<form id="legal_personality" name="legalPersonality">
+					<!--  Legal_personality -->
+					<div class="legal_personality ">
+						<p>Vous êtes :</p>
+						{% for question in questions %}
+						{% if question.category is same as 'legal personality' %}
+						<label><input type="radio" name="lp" id="{{question.content}}"
+								value="{{question.content}}">&nbsp;{{question.content}}</label><br>
+						{% endif %}
+						{% endfor %}
+					</div>
+					<!--  /Legal_personality -->
+					<!-- Question - personne_morale -->
+					<div class="personne_morale ">
+
+						{% for question in questions %}
+						{% if question.category is same as 'personne morale' %}
+						<p>{{question.content}}</p>
+						<label><input type="radio" class="lp" name="pm{{ loop.index }}"
+								value="Oui">&nbsp;Oui</label><br>
+						<label><input type="radio" class="lp mb-5" name="pm{{ loop.index }}"
+								value="Non">&nbsp;Non</label><br>
+						{% endif %}
+						{% endfor %}
+
+					</div>
+					<!-- /Question - personne_morale -->
+					<!-- Question - personne_physique -->
+					<div class="personne_physique mt-5">
+
+						{% for question in questions %}
+						{% if question.category is same as 'personne physique' %}
+						<p>{{question.content}}</p>
+						<label><input type="radio" class="lp" name="pp{{ loop.index }}"
+								value="Oui">&nbsp;Oui</label><br>
+						<label><input type="radio" class="lp mb-5" name="pp{{ loop.index }}"
+								value="Non">&nbsp;Non</label><br>
+						{% endif %}
+						{% endfor %}
+				</form>
+
+			</div>
+			<!-- /Question - personne_physique -->
+			<!-- Question - non-averti1 -->
+			<div class="non-averti1 mt-5">
+					<form id="non-averti1" name="nonAverti1">
+					{% for question in questions %}
+					{% if question.category is same as 'non-averti1' %}
+					<p>{{question.content}}</p>
+					<label><input type="radio" class="na1" name="na1{{ loop.index }}" value="Oui">&nbsp;Oui</label><br>
+					<label><input type="radio" class="na1 mb-5" name="na1{{ loop.index }}"
+							value="Non">&nbsp;Non</label><br>
+					{% endif %}
+					{% endfor %}
+				</form>
+
+			</div>
+			<!-- /Question - non-averti1 -->
+			<!-- Question - non-averti2 -->
+			<div class="non-averti2 mt-5">
+				<form id="non-averti2" name="nonAverti2">
+					{% for question in questions %}
+					{% if question.category is same as 'non-averti2' %}
+					<p>{{question.content}}</p>
+					<label><input type="radio" class="na2" name="na2{{ loop.index }}" value="Oui">&nbsp;Oui</label><br>
+					<label><input type="radio" class="na2 mb-5" name="na2{{ loop.index }}"
+							value="Non">&nbsp;Non</label><br>
+					{% endif %}
+					{% endfor %}
+				</form>
+
+			</div>
+
+			<!-- /Question - non-averti2 -->
+			<!-- Question - communes -->
+			<div class="communes mt-5">
+				<form id="communes" name="communes">
+					{% for question in questions %}
+					{% if question.category is same as 'communes' %}
+					{% if question.type is same as 'radio' %}
+					<p>{{question.content}}</p>
+					<label><input type="radio" class="com" name="com{{ loop.index }}" value="Oui">&nbsp;Oui</label><br>
+					<label><input type="radio" class="com mb-5" name="com{{ loop.index }}"
+							value="Non">&nbsp;Non</label><br>
+					{% elseif question.type is same as 'number' %}
+
+					<label>{{question.content}}<br><input type="number" class="lp mb-5 mt-2"
+							name="com{{ loop.index }}"></label>
+					{% elseif question.type is same as 'checkbox' %}
+					<p>{{question.content}}</p>
+					{{question.checkboxDetails|raw}}
+					
+
+			
+
+				{% endif %}
+				{% endif %}
+
+				{% endfor %}
+				<input type='submit' class='validateBtn btn text-white mt-3' id="questions_communes" value='Validate' />
+
+				<!-- <a href="{{ path('app_register') }}" class="btn text-white mt-3" id="questions_communes">Valider</a> -->
+				</form>
+
+			</div>
+			<!-- /Question - communes -->
+
+		</div>
+	</div>
+	</div>
+</section>
+<!--  //Inscription investisseurs -->
+{{ include('footer.html.twig')}}
+<script src="js/inscription.js"></script>{% endblock %}

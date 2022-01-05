@@ -1,0 +1,559 @@
+{% extends 'base.html.twig' %} {% block title %}accueil {% endblock %} {% block
+body %}
+
+<!--  Banner -->
+<div class="banner vh-100 d-flex align-items-center" id="home">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-9 mx-auto text-center">
+        <h1 class="display-4 mb-3 text-uppercase">
+          Investir dans les PME de croissance
+        </h1>
+        <!-- <a href="{{ path('app_login') }}" class="btn btn-danger mt-5 me-3"
+          >Connexion investisseurs</a
+        > -->
+        <a
+          href="{{ path('questionnaire') }}"
+          class="btn btn-danger  mt-5 me-3 bannerBtn shadow"
+          >Inscription investisseurs </a >
+      </div>
+    </div>
+  </div>
+</div>
+<!--  //Banner -->
+<!--  Concept -->
+<section id="concept">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 mx-auto text-center">
+        <h5 class="mb-3">Concept</h5>
+        <h1 class="text-uppercase">Le concept</h1>
+        <h6 class="text-muted mb-5 mt-3">
+          Encourager et faciliter l'entrée et la sortie de l'épargne locale au
+          capital des PME régionales à forte croissance
+        </h6>
+      </div>
+      <div class="row d-flex justify-content-between flex-wrap">
+        
+          <div class="concept card-effect">
+            <div class="fontawesome">
+              <i class="fas fa-university"></i>
+            </div>
+            <h5 class="mt-4 mb-2">Liquidité</h5>
+            <p>
+              Les actions peuvent être placées dans un PEA PME : le Fiche
+              d’informations clés sur l’investissement permet d'acheter ou de
+              vendre les actions des sociétés adhérentes, sans intermédiaire et
+              sans frais.
+            </p>
+          </div>
+        
+
+       
+          <div class="concept card-effect">
+            <div class="fontawesome">
+              <i class="fas fa-shield-alt"></i>
+            </div>
+            <h5 class="mt-4 mb-2">Protection</h5>
+            <p>
+              Les PME, sélectionnées pour leur potentiel de croissance, sont
+              accompagnées par CIIB et contrôlées par l'association
+              <a href="https://www.love-money.org">Love Money</a> pour les PME
+              et doivent adhérer à la charte de bonne conduite.
+            </p>
+         
+        </div>
+
+        
+          <div class="concept card-effect">
+            <div class="fontawesome">
+              <i class="fas fa-chart-line"></i>
+            </div>
+            <h5 class="mt-4 mb-2">Accompagnement</h5>
+            <p>
+              Les dirigeants des PME sont accompagnés par
+              <a href="https://www.ciib.online">CIIB</a> pour l'ingénierie
+              juridique financière et boursière, l'augmentation de fonds propres
+              et leur communication financière. CIIB propose d'animer le Fiche
+              d’informations clés sur l’investissement pour compléter
+              l'accompagnement.
+            </p>
+         
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- // Concept -->
+
+<!--  Investir -->
+<section id="investir" class="bg-light">
+  <div class="container">
+    <div class="row mb-5">
+      <div class="col-md-8 mx-auto text-center">
+        <h5 class="mb-3">Sociétés en financement</h5>
+        <h1 class="text-uppercase">Entreprises sélectionnées</h1>
+        <h6 class="text-muted mb-5 mt-3">
+          Investir dans les PME sélectionnées par Love PME
+        </h6>
+      </div>
+    </div>
+    <div class="d-flex justify-content-between flex-wrap ">
+    
+        <div class="enterprise card-effect">
+          <img
+            class="img-fluid mb-3"
+            src="{{ asset('img/sival_fonderie_logo.png') }}"
+            alt=""
+          />
+
+          <div>
+            <p>
+              SIVAL, spécialisé dans la fabrication de pièces complexes en
+              alliages d’aluminium, regroupe trois sites complémentaires 8 000
+              m², dont deux en France (Fonderie à Eu en Normandie et usinage à
+              Friville-Escarbotin dans les Hauts-de-France) et une en Hongrie
+              (Aluko près de Budapest. SIVAL réalise des pièces de haute
+              technicité pour des clients de l’industrie aéronautique (Safran,
+              Thalès, Zodiac Aerospace) et ferroviaire (Faiveley, SNCF, Alstom).
+              Le Groupe SIVAL compte 119 salariés, dont 94 en France.
+            </p>
+            <p>
+              En 2019, le capital social de Sival a été porté de 500 000 € à 840
+              000 € avec 60 actionnaires individuels.
+            </p>
+            <p>
+              Les 168 000 actions SIVAL de 5 € nominal (achetées de gré à gré ou
+              souscrites à l'occasion d'une augmentation de capital) sont
+              éligibles au PEA-PME comme au PEA.
+            </p>
+            {% if is_granted('ROLE_USER') %}<a
+              href="https://www.ciib.fr/marche-actions/annonces?id=511633"
+              class="py-3"
+              >Fiche d’informations clés sur l’investissement et banque
+              d'informations&nbsp;
+              <i class="fas fa-arrow-right"></i> </a
+            >{% endif %}
+          </div>
+        </div>
+     
+
+     
+        <div class="enterprise card-effect">
+          <img
+            class="img-fluid mb-3"
+            src="{{ asset('img/logo-ciib.gif') }}"
+            alt=""
+          />
+
+          <div>
+            <p>
+              CiiB est expert en accompagnement pour l'introduction en bourse
+              depuis 1983. CiiB a mis en place le Fiche d’informations clés sur
+              l’investissement ; un tremplin pour une cotation sur Euronext
+              Access ou Euronext Growth.
+            </p>
+
+            <p>
+              Les actions CiiB (achetées de gré à gré ou bien souscrites à
+              l'occasion d'une augmentation de capital) sont éligibles au
+              PEA-PME comme au PEA.
+            </p>
+
+            <p>
+              Appeler le 01.42.46.11.73 ou le 06.14.85.19.15 pour tous
+              renseignements.
+            </p>
+            <p>Mail : contact@ciib.fr</p>
+
+            {% if is_granted('ROLE_USER') %}<a
+              href="https://www.ciib.fr/marche-actions/annonces?id=511630"
+              class="py-3"
+              >Fiche d’informations clés sur l’investissement et banque
+              d'informations&nbsp;
+              <i class="fas fa-arrow-right"></i> </a
+            >{% endif %}
+          </div>
+        </div>
+      
+        <div class="enterprise card-effect">
+          <img
+            class="img-fluid mb-3"
+            src="{{ asset('img/logo-accueil-hotel.gif') }}"
+            alt=""
+          />
+
+          <div>
+            <p>
+              Groupe d'exploitation hôtelière fondé au début des années 90,
+              composé de 11 hôtels.
+            </p>
+            <p>DERNIER DIVIDENDE 2018 : 0,05 € PAR ACTION.</p>
+            <p>
+              Les 4 092 000 000 actions ACCUEIL HOTEL de 1 € nominal (achetées
+              de gré à gré ou souscrites à l'occasion d'une augmentation de
+              capital) sont éligibles au PEA-PME comme au PEA.
+            </p>
+            <p>
+              Appeler le 01.42.46.11.73 ou le 06.14.85.19.15 pour tous
+              renseignements.
+            </p>
+            <p>Mail : contact@ciib.fr</p>
+            {% if is_granted('ROLE_USER') %}<a
+              href="https://www.ciib.fr/marche-actions/annonces?id=511628"
+              class="py-3"
+              >Fiche d’informations clés sur l’investissement et banque
+              d'informations&nbsp; <i class="fas fa-arrow-right"></i>{% endif %}
+            </a>
+          </div>
+        </div>
+      
+   
+        <div class="enterprise card-effect">
+          <img
+            class="img-fluid mb-3"
+            src="{{ asset('img/logo-cell-constraint-cancer.gif') }}"
+            alt=""
+          />
+
+          <div>
+            <p>
+              Leader en Oncologie Physique, créée en 2009, Cell Constraint &
+              Cancer SA développe un procédé permettant d’agir sur des cancers
+              peu accessibles au traitement comme le pancréas en utilisant des
+              moyens purement physiques et non pas
+              biochimiques/génétiques/immunologiques.
+            </p>
+            {% if is_granted('ROLE_USER') %}<a
+              href="https://www.ciib.fr/marche-actions/annonces?id=511620"
+              class="py-3"
+              >Fiche d’informations clés sur l’investissement et banque
+              d'informations&nbsp; <i class="fas fa-arrow-right"></i>{% endif %}
+            </a>
+          </div>
+        </div>
+    
+
+     
+        <div class="enterprise card-effect">
+          <img
+            class="img-fluid mb-3"
+            src="{{ asset('img/veracash_logo.png') }}"
+            alt=""
+          />
+
+          <div>
+            <p>Dénomination sociale : VeraCash SAS</p>
+            <p>
+              Forme juridique et capital social : Société par Actions Simplifiée
+              au capital de 1 313 680 € divisé en 13 136 800 actions de 0,1 € de
+              valeur nominale entièrement libérées
+            </p>
+            <p>
+              Registre du Commerce et des Sociétés : RCS Bordeaux 808 689 657
+            </p>
+            <p>Siège social : 42, rue de Tauzia 33800 Bordeaux</p>
+            <p>Mail : contact@ciib.fr</p>
+            {% if is_granted('ROLE_USER') %}<a
+              href="https://www.ciib.fr/marche-actions/annonces?id=511638"
+              class="py-3"
+              >Fiche d’informations clés sur l’investissement et banque
+              d'informations&nbsp;
+              <i class="fas fa-arrow-right"></i> </a
+            >{% endif %}
+          </div>
+        </div>
+     
+
+      
+        <div class="enterprise card-effect">
+          <img
+            class="img-fluid mb-3"
+            src="{{ asset('img/logo-aec-group.png') }}"
+            alt=""
+          />
+
+          <div>
+            <p>
+              Créée il y a 25 ans, pionnier et spécialiste du barter (« échange
+              ») en France, ACHAT ECHANGE COMPENSATION-BESTMARQUES SAS fournit
+              des prestations de communication en échange de marchandises.
+            </p>
+            <p>CARACTÉRISTIQUES DE L’OPÉRATION :</p>
+            <p></p>
+            <p>- Nombre d’actions cédées : 1 000</p>
+            <p>- Prix de cession : 312,5 € par action</p>
+            <p>
+              - Période de cession des actions : du 6 janvier 2021 au 15 février
+              2021
+            </p>
+            <p>
+              - Affectation du produit de la cession :souscription au capital de
+              ACHAT ECHANGE COMPENSATION-BESTMARQUES SAS par création de 1000
+              actions nouvelles au prix unitaire de 312,5 €
+            </p>
+            {% if is_granted('ROLE_USER') %}<a
+              href="https://www.ciib.fr/marche-actions/annonces?id=511639"
+              class="py-3"
+              >Fiche d’informations clés sur l’investissement et banque
+              d'informations&nbsp;
+              <i class="fas fa-arrow-right"></i> </a
+            >{% endif %}
+          </div>
+        </div>
+    
+    </div>
+  </div>
+</section>
+<!--//Investir-->
+<!--  Avantages épargnants -->
+<section id="avantages">
+  <div class="container">
+    <div class="row mb-5">
+      <div class="col-md-8 mx-auto text-center">
+        <h5 class="mb-3">Avantages épargnants</h5>
+        <h1 class="text-uppercase">Avantages épargnants</h1>
+        <h6 class="text-muted mb-5 mt-3">
+          Misez sur votre PEA - PME - Bénéficiez de réductions ISF et IR
+        </h6>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-6 col-sm-12">
+        <div class="card-effect">
+          <div class="avantages text-center">
+            <img
+              class="img-fluid mb-3"
+              src="{{ asset('img/avantages1.jpg') }}"
+              alt=""
+            />
+          </div>
+          <h5 class="mt-4 mb-2">PEA-PME : vos plus-values sont exonérées</h5>
+          <p>
+            Pour votre PEA investissez dans le non coté grâce au Fiche
+            d’informations clés sur l’investissement (offres et demandes
+            d'actions) sans la bourse, par internet
+          </p>
+        </div>
+      </div>
+      <div class="col-lg-6 col-sm-12">
+        <div class="card-effect">
+          <div class="avantages text-center">
+            <img
+              class="img-fluid mb-3"
+              src="{{ asset('img/avantages2.jpg') }}"
+              alt=""
+            />
+          </div>
+          <h5 class="mt-4 mb-2">Réductions fiscales- 18 % IR - 50% ISF</h5>
+          <p>
+            Effectuez un placement long terme dans une entreprise locale et
+            bénéficiez des réductions sur l'impôt sur le revenu ou sur la
+            fortune
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--  Avantages épargnants -->
+
+<!--  PME -->
+<section id="pme" class="bg-light">
+  <div class="container">
+    <div class="row mb-5 mt-3">
+      <div class="col-md-8 mx-auto text-center">
+        <h5 class="mb-3">Services aux entreprises</h5>
+        <h1 class="text-uppercase text-center">Des PME ambitieuses</h1>
+        <h6 class="text-muted text-center mb-5">
+          Selectionnées pour leur potentiel de croissance durable et leur
+          objectif d'être introduites en bourse avant 3 ans
+        </h6>
+      </div>
+    </div>
+    <div class="row my-3">
+      <div class="col-lg-12">
+        <div class="card-effect">
+          <h5 class="mt-4 mb-2">1. Sélection des entreprises</h5>
+          <p>
+            Autodiagnostic en ligne : Les entreprises doivent présenter trois
+            bilans, envisager leur pérennité pour plus de dix ans et viser
+            l'introduction sur Euronext Growth
+          </p>
+        </div>
+      </div>
+    </div>
+    {#
+    <div class="fontawesome mx-auto">
+      <i class="fas fa-arrow-down"></i>
+    </div>
+    #}
+    <div class="row my-3">
+      <div class="col-lg-12">
+        <div class="card-effect">
+          <h5 class="mt-4 mb-2">2. Adhésion et formation "LOVE MONEY"</h5>
+          <p>
+            L'adhésion inclut une formation de base ainsi qu'une consultation
+            (1h) pour vérifier la capacité de l'entreprise à réaliser une ou
+            plusieurs augmentations de capital avec des épargnants individuels.
+            Par ailleurs les adhérents personnes morales bénéficient des mêmes
+            droits que les adhérents personnes physiques. Des formations
+            spécifiques de 2 jours peuvent être dispensées pour développer la
+            culture financière.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="row my-3">
+      <div class="col-lg-12">
+        <div class="card-effect">
+          <h5 class="mt-4 mb-2">
+            3. Appel à souscription et Fiche d’informations clés sur
+            l’investissement
+          </h5>
+          <p>
+            L'entreprise présente un Document d'information avec avis Love Money
+            ou visa AMF le cas échéant. CIIB ouvre le registre des actionnaires,
+            et mentionne les mouvements de titres et les transferts.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row my-3">
+      <div class="col-lg-12">
+        <div class="card-effect">
+          <h5 class="mt-4 mb-2">
+            4. Communication financière par l'agence C3P et suivi par
+            l'association Love Money pour les PME
+          </h5>
+          <p>
+            L'agence C3P propose aux entreprises de communiquer et animer le
+            marché. L'association Love Money vérifie le respect des engagements
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row my-3">
+      <div class="col-lg-12">
+        <div class="card-effect">
+          <h5 class="mt-4 mb-2">5. Introduction en bourse</h5>
+          <p>
+            CIIB peut ensuite introduire l'entreprise en bourse (sur Euronext
+            Access ou sur Euronext Growth) une fois que celle-ci a suffisamment
+            fait ses preuves. Le Fiche d’informations clés sur l’investissement
+            est une école de la bourse pour les entreprises de croissance.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--  //PME -->
+
+<!--  Protection -->
+<section class="row" id="protection">
+  <div class="col-lg-9 mx-auto">
+    <div class="row">
+      <div class="col-lg-6 col-md-12 text-center">
+        <img class="mb-5" src="{{ asset('img/cover2.jpg') }}" alt="" />
+
+        <div class="labelLM mb-5">
+          <span
+            >L'association regroupe à la fois des particuliers et les
+            entreprises en recherche de financement.</span
+          ><br />
+          <span
+            >Tous les adhérents ont accès à une formation sur le financement en
+            fonds propres pour développer leur culture financière.</span
+          ><br />
+          <span
+            >Toute entreprise sollicitant une levée de capitaux s'engage à
+            respecter une charte de bonne conduite pour la protection des
+            intérêts des actionnaires minoritaires.</span
+          ><br />
+        </div>
+      </div>
+
+      <div class="col-lg-6 col-md-12">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <h5 class="mb-3 text-center">Protection des actionnaires</h5>
+              <h1 class="text-uppercase text-center">
+                Protection des actionnaires
+              </h1>
+              <h6 class="text-muted text-center mb-5 mt-3">
+                Les entreprises selectionnées doivent respecter une charte de
+                bonne conduite
+              </h6>
+
+              <div class="protection d-flex mt-5 pt-5">
+                <div class="fontawesome me-5">
+                  <i class="fas fa-check"></i>
+                </div>
+                <div>
+                  <h5>
+                    Garantir une transparence et une qualité d'information
+                    proche de ce qu'impose l'AMF aux sociétés cotées
+                  </h5>
+                  <p>
+                    Cette transparence se traduit par la présentation d'un
+                    Document d'informations respectant le schéma d'instruction
+                    de la C.O.B. (Déc. 2001), la fourniture d'un tableau de bord
+                    trimestriel sur le fonctionnement de l'entreprise ainsi que
+                    par la diffusion d'informations financières sur le site
+                    internet de l'entreprise
+                  </p>
+                </div>
+              </div>
+
+              <div class="protection d-flex mt-3">
+                <div class="fontawesome me-5">
+                  <i class="fas fa-check"></i>
+                </div>
+                <div>
+                  <h5>
+                    Mettre en place un carnet d'achat et de vente d'actions
+                    facilitant la libre négociabilité des titres
+                  </h5>
+                  <p>
+                    Ce Fiche d’informations clés sur l’investissement est mis en
+                    place par un organisme agréé par l'association Love Money
+                    pour les PME et vise à apporter de la liquidité pour le
+                    marché des actions non cotées
+                  </p>
+                </div>
+              </div>
+              <div class="protection d-flex mt-3">
+                <div class="fontawesome me-5">
+                  <i class="fas fa-check"></i>
+                </div>
+                <div>
+                  <h5>
+                    Garantir une transparence et une qualité d'information
+                    proche de ce qu'impose l'AMF aux sociétés cotées
+                  </h5>
+                  <p>
+                    Cette transparence se traduit par la présentation d'un
+                    Document d'informations respectant le schéma d'instruction
+                    de la C.O.B. (Déc. 2001), la fourniture d'un tableau de bord
+                    trimestriel sur le fonctionnement de l'entreprise ainsi que
+                    par la diffusion d'informations financières sur le site
+                    internet de l'entreprise.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--  //Protection -->
+
+{{ include("footer.html.twig") }}
+
+{% endblock %}

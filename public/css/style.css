@@ -1,0 +1,275 @@
+:root {
+   --box-shadow: 0 0.5rem 1.4rem rgb(1, 127, 201, 0.1);
+}
+
+body {
+   font-family: 'Source Sans Pro', sans-serif;
+   line-height: 1.7;
+}
+
+h1, h2, h3, h4, h5, h6 {
+
+   font-family: 'Open Sans', sans-serif;
+   color: rgb(1, 127, 201, 1);
+   font-weight: 700;
+}
+
+h1 {
+   color: #bb0000;
+}
+
+.display-4 {
+   color: white;
+
+}
+
+.text-muted {
+   font-weight: 400;
+}
+
+a {
+   color: rgb(1, 127, 201, 1);
+   text-decoration: none;
+}
+
+.banner {
+   background-image: url(../img/cover.jpg);
+   background-position: center;
+   background-size: cover;
+   background-attachment: fixed;
+   position: relative;
+   z-index: 2;
+}
+
+.banner::after {
+   content: "";
+   width: 100%;
+   height: 100%;
+   position: absolute;
+   top: 0;
+   left: 0;
+   background-color: rgb(1, 127, 201, 0.7);
+   z-index: -1;
+}
+
+.bannerBtn {
+   font-size: 1.4rem;
+   padding: 0.9rem;
+   letter-spacing: 0.1rem;
+   font-family: 'Open Sans', sans-serif;
+   font-weight: 600;
+   border: 1px solid white;
+
+}
+
+.navbar {
+   box-shadow: var(--box-shadow);
+}
+
+.navbar .logo {
+   width: 10rem;
+}
+
+.navbar .nav-link {
+   font-size: 1.2rem;
+   letter-spacing: 0.05rem;
+
+}
+
+.navbar-light .navbar-nav .nav-item .nav-link:hover {
+   border-bottom: solid 2px rgb(1, 127, 201, 1);
+   color: #bb0000;
+}
+
+.navbar-light .navbar-nav .nav-item .nav-link {
+   color: rgb(1, 127, 201, 1);
+   font-weight: 600;
+   padding: 3px 10px;
+}
+
+.nav-item {
+   padding-left: 0.2rem;
+
+}
+
+
+section {
+   padding-top: 5rem;
+   padding-bottom: 5rem;
+
+}
+
+.card-effect {
+   box-shadow: var(--box-shadow);
+   background-color: white;
+   padding: 1.5rem;
+   transition: all 0.35s ease;
+}
+
+.concept {
+   width: 32%;
+   margin-bottom: 2rem;
+
+}
+
+@media (max-width: 992px) {
+   .concept {
+      width: 48%;
+
+
+   }
+}
+
+@media (max-width: 768px) {
+   .concept {
+      width: 100%;
+
+   }
+}
+
+
+.card-effect:hover {
+   box-shadow: none;
+   transform: translateY(0.3rem);
+}
+
+.fontawesome {
+   width: 3.4rem;
+   height: 3.4rem;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   background-color: #bb0000;
+   color: white;
+   font-size: 2rem;
+   border-radius: 6.25rem;
+   flex: none;
+}
+
+.labelLM {
+   text-align: justify;
+   margin-left: 2rem;
+   margin-right: 2rem;
+}
+
+.enterprise img {
+   border-bottom: 0.1rem solid #bb0000;
+   border-top: 0.2rem solid #bb0000;
+   padding: 1rem;
+
+
+}
+
+.enterprise div {
+
+   padding: 1rem;
+
+
+}
+
+.enterprise {
+   width: 32%;
+   margin-bottom: 2rem;
+
+}
+
+@media (max-width: 992px) {
+   .enterprise {
+      width: 48%;
+
+
+   }
+}
+
+@media (max-width: 768px) {
+   .enterprise {
+      width: 100%;
+
+   }
+}
+
+.social-icons {
+   display: flex;
+   justify-content: center;
+}
+
+.social-icons a {
+   width: 34px;
+   height: 34px;
+   background-color: rgb(1, 127, 201, 1);
+   border-radius: 2px solid rgb(1, 127, 201, 1);
+   color: white;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   border-radius: 100px;
+   margin-left: 5px;
+   transition: all 0.4s ease;
+   border: 2px solid rgb(1, 127, 201, 1);
+}
+
+.social-icons a:hover {
+   color: rgb(1, 127, 201, 1);
+   background-color: transparent;
+   border-color: rgb(1, 127, 201, 1);
+}
+
+
+
+
+
+.footer-top {
+   padding-top: 90px;
+   padding-bottom: 90px;
+   background-color: rgb(1, 127, 201, 0.7);
+   color: white;
+}
+
+.footer-top a {
+   color: white;
+}
+
+.footer-top a:hover {
+   color: #bb0000;
+}
+
+.footer-bottom {
+   background-color: #242933;
+}
+
+.footerTitle {
+   color: #bb0000;
+   text-transform: uppercase;
+}
+
+#registration_form_save, #questionnaire_save, #connexion, #profile_modification_password, #edit_profile_Valider, .profile_btn, #users_admin_Valider, #reset_pass_envoyer, #questions_communes {
+   background-color: #bb0000;
+   border: #bb0000;
+   float: right;
+}
+
+/* Inscription */
+#legal_personality {
+   margin-bottom: 2rem;
+}
+
+.personne_morale, .personne_physique,
+.non-averti1, .non-averti2, .communes {
+   display: none;
+
+}
+
+
+
+#questionnaire li {
+   margin-top: 1rem;
+}
+
+.listadmin, .reset_email_sent {
+   height: 60vh;
+
+}
+
+.listadmin ul {
+   list-style-type: none;
+}
