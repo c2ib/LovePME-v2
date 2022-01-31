@@ -52,6 +52,11 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      */
     private $date_of_birth;
 
+    /**
+     * @ORM\OneToOne(targetEntity=ReponsesQuestionnaireGeneral::class, mappedBy="User", cascade={"persist", "remove"})
+     */
+    private $reponsesQuestionnaireGeneral;
+
    
 
     public function getId(): ?int
@@ -175,6 +180,28 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setDateOfBirth(\DateTimeInterface $date_of_birth): self
     {
         $this->date_of_birth = $date_of_birth;
+
+        return $this;
+    }
+
+    public function getReponsesQuestionnaireGeneral(): ?ReponsesQuestionnaireGeneral
+    {
+        return $this->reponsesQuestionnaireGeneral;
+    }
+
+    public function setReponsesQuestionnaireGeneral(?ReponsesQuestionnaireGeneral $reponsesQuestionnaireGeneral): self
+    {
+        // unset the owning side of the relation if necessary
+        if ($reponsesQuestionnaireGeneral === null && $this->reponsesQuestionnaireGeneral !== null) {
+            $this->reponsesQuestionnaireGeneral->setUser(null);
+        }
+
+        // set the owning side of the relation if necessary
+        if ($reponsesQuestionnaireGeneral !== null && $reponsesQuestionnaireGeneral->getUser() !== $this) {
+            $reponsesQuestionnaireGeneral->setUser($this);
+        }
+
+        $this->reponsesQuestionnaireGeneral = $reponsesQuestionnaireGeneral;
 
         return $this;
     }

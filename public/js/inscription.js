@@ -115,10 +115,4 @@ document.forms.nonAverti2.addEventListener("change", function () {
 });
   /*Communes - form */
   
-    var form = document.querySelector("#communes");
-    var validateBtn = form.querySelector(".validateBtn");
-   form.addEventListener("submit", function (event) {
-     event.preventDefault();
-     console.log("clicked on validate");
-   });
- 
+  

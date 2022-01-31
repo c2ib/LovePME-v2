@@ -106,40 +106,17 @@
 			<!-- /Question - non-averti2 -->
 			<!-- Question - communes -->
 			<div class="communes mt-5">
-				<form id="communes" name="communes">
-					{% for question in questions %}
-					{% if question.category is same as 'communes' %}
-					{% if question.type is same as 'radio' %}
-					<p>{{question.content}}</p>
-					<label><input type="radio" class="com" name="com{{ loop.index }}" value="Oui">&nbsp;Oui</label><br>
-					<label><input type="radio" class="com mb-5" name="com{{ loop.index }}"
-							value="Non">&nbsp;Non</label><br>
-					{% elseif question.type is same as 'number' %}
-
-					<label>{{question.content}}<br><input type="number" class="lp mb-5 mt-2"
-							name="com{{ loop.index }}"></label>
-					{% elseif question.type is same as 'checkbox' %}
-					<p>{{question.content}}</p>
-					{{question.checkboxDetails|raw}}
-					
-
-			
-
-				{% endif %}
-				{% endif %}
-
-				{% endfor %}
-				<input type='submit' class='validateBtn btn text-white mt-3' id="questions_communes" value='Validate' />
-
-				<!-- <a href="{{ path('app_register') }}" class="btn text-white mt-3" id="questions_communes">Valider</a> -->
-				</form>
+				{{ form_start(questionnaireForm) }}
+				
+				
+				{{ form_end(questionnaireForm) }}
 
 			</div>
 			<!-- /Question - communes -->
 
 		</div>
 	</div>
-	</div>
+	
 </section>
 <!--  //Inscription investisseurs -->
 {{ include('footer.html.twig')}}

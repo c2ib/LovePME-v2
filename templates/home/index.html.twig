@@ -1,6 +1,8 @@
 {% extends 'base.html.twig' %} {% block title %}accueil {% endblock %} {% block
 body %}
-
+{% for s in app.flashes('success') %}
+<div class="alert alert-success text-center">{{ s }}</div>
+{% endfor %}
 <!--  Banner -->
 <div class="banner vh-100 d-flex align-items-center" id="home">
   <div class="container">
@@ -127,13 +129,14 @@ body %}
               souscrites à l'occasion d'une augmentation de capital) sont
               éligibles au PEA-PME comme au PEA.
             </p>
-            {% if is_granted('ROLE_USER') %}<a
-              href="https://www.ciib.fr/marche-actions/annonces?id=511633"
-              class="py-3"
-              >Fiche d’informations clés sur l’investissement et banque
-              d'informations&nbsp;
-              <i class="fas fa-arrow-right"></i> </a
-            >{% endif %}
+          
+             <a href="#">Fiche d’informations clés sur l’investissement et banque d'informations&nbsp;
+              <i class="fas fa-arrow-right"></i> </a><br>
+              <div class="text-center">
+               <a class="btn btn-danger">Souscrire</a> 
+              </div>
+              
+           
           </div>
         </div>
      

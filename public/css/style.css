@@ -242,7 +242,7 @@ section {
    text-transform: uppercase;
 }
 
-#registration_form_save, #questionnaire_save, #connexion, #profile_modification_password, #edit_profile_Valider, .profile_btn, #users_admin_Valider, #reset_pass_envoyer, #questions_communes {
+#registration_form_save, #questionnaire_save, #connexion, #profile_modification_password, #edit_profile_Valider, .profile_btn, #users_admin_Valider, #reset_pass_envoyer, #questions_communes, #reponses_save {
    background-color: #bb0000;
    border: #bb0000;
    float: right;
