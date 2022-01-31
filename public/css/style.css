@@ -273,3 +273,7 @@ section {
 .listadmin ul {
    list-style-type: none;
 }
+
+.fas{
+   font-size: 1.5rem;
+}
