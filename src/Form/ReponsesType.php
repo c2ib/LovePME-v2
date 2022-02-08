@@ -9,6 +9,9 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\MoneyType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
+use Symfony\Component\Validator\Constraints\IsTrue;
+
 
 class ReponsesType extends AbstractType
 {
@@ -92,6 +95,15 @@ financière d’un projet afin d’obtenir mes meilleures chances de gains' => 4
                 'expanded' => true,
                 'multiple' => true,
                 'label' => '9. Quels sont vos principales motivations pour vous tourner vers des investissements participatifs ?'
+            ])
+            ->add('agreeTerms3', CheckboxType::class,[
+                'mapped' => false,
+                'label'=> 'Je certifie l\'exactitude de l\'ensemble des informations fournies et je confirme avoir pris connaissance de tous les avertissements!',
+                'constraints' => [
+                    new IsTrue([
+                        'message' => 'Veuillez cocher la case pour attester que vous respectez ces conditions'
+                    ]),
+                ]
             ])
             ->add('save', SubmitType::class, [
                 'label' => "Valider",
