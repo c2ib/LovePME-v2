@@ -1,0 +1,2 @@
+#!/bin/sh
+rsync -avhp --delete ./ ciibeytm@ssh.cluster010.ovh.net:vitrine-salon --include=vendor --exclude=".*"
