@@ -2,10 +2,18 @@
     <div class="footer-top">
         <div class="container">
             <div class="row gy-4">
-                <div class="col-lg-4">
+                <div class="col-lg-6">
                     <a href="{{ path('home') }}"><img class="logo" src="{{ asset('img/LogoLP.png') }}" alt=""></a>
+                    <div style="width: 85%">
+                        <p style="text-align: justify">
+                            LOVE PME est une plate-forme en ligne de financement participatif, exploitée par la société Conseil en Ingénierie et Introduction Boursière des PME-PMI (CIIB), prestataire européen de services de financement participatif.
+                            CIIB est « en cours d'agrément » par l'Autorité des Marchés Financiers (AMF) et immatriculé auprès de l'ORIAS sous le numéro XXXXX. CIIB est titulaire d'un contrat Allianz Responsabilité Civile souscrit sous le numéro 59453263.
+                            CIIB est titulaire du label Finance Innovation.
+                        </p>
+                    </div>
+
                 </div>
-                <div class="col-lg-4">
+                <div class="col-lg-3">
                     <h5 class="footerTitle">Nos liens utiles</h5>
                     <ul class="list-unstyled">
                         <li><button type="button" class="btn text-white" id="btn1">Réclamations</button></li>
@@ -72,7 +80,7 @@
                                 </div>
                             </div>
                         </div>
-                        <li <button type="button" class="btn text-white" id="btn2">Avertissements sur les
+                        <li><button type="button" class="btn text-white" id="btn2">Avertissements sur les
                             risques</button></li>
                         <!-- Modal2-->
                         <div class="modal fade" id="modal2" tabindex="-1">
@@ -127,7 +135,8 @@
                             </div>
                         </div>
                         {# Modal3 #}
-                        <li><button type="button" class="btn text-white" id="btn3">CGU</button></li>
+                        <!--li><button type="button" class="btn text-white" id="btn3">CGU</button></li-->
+                        <li><a href="{{ asset('docs/cgu-lovepme.pdf') }}" class="btn text-white">CGU</a></li>
 <div class="modal fade" id="modal3" tabindex="-1">
     <div class="modal-dialog modal-fullscreen">
         <div class="modal-content">
@@ -308,7 +317,7 @@
                     </ul>
                 </div>
 
-                <div class="col-lg-4 ">
+                <div class="col-lg-3 ">
                     <h5 class="footerTitle">Contact</h5>
                     <ul class="list-unstyled ">
                         <li>
@@ -329,7 +338,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
-                    <p class="mb-0 text-white">© 2021 Love PME | Tous droits réservés</p>
+                    <p class="mb-0 text-white">© {{ 'now'|date('Y') }} Love PME | Tous droits réservés</p>
                 </div>
                 <div class="col-md-6">
                     <div class="social-icons">

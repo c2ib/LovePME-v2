@@ -33,15 +33,16 @@ class RegistrationController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($user);
             $entityManager->flush();
-           
-
 
             return $this->redirectToRoute('home');
         }
-$this->addFlash(
-             'success',
-            'Félicitations, vous êtes bien inscrit !'
-             );
+        if($user->getId()!==null){
+            $this->addFlash(
+                'success',
+                'Félicitations, vous êtes bien inscrit !'
+            );
+        }
+
         return $this->render('registration/register.html.twig', [
             'registrationForm' => $form->createView(),
         ]);
